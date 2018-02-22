@@ -1,5 +1,5 @@
 import React, {Fragment} from 'react';
-import {Route, Switch} from 'react-router-dom';
+import {Route} from 'react-router-dom';
 import Login from './components/Login';
 import Account from './components/Account';
 

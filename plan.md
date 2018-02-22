@@ -1,7 +1,7 @@
 # Plan
 
 * Front-End
-    * Routing - let's use Browser Router
+    * ~~Routing - let's use Browser Router~~
     * Components
         * Login
             * Pictue
@@ -35,16 +35,16 @@
             * auth Login callback
             * Logout
             
-* packages -(FINISHED)
-    * dotenv
-    * axios
-    * redux
-    * react-redux
-    * react-router-dom
-    * massive
-    * express
-    * body-parser
-    * express-session
+* ~~packages~~
+    * ~~dotenv~~
+    * ~~axios~~
+    * ~~redux~~
+    * ~~react-redux~~
+    * ~~react-router-dom~~
+    * ~~massive~~
+    * ~~express~~
+    * ~~body-parser~~
+    * ~~express-session~~
 
 * Enviornment Variables
     * dot-env
