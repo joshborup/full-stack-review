@@ -35,7 +35,7 @@
             * auth Login callback
             * Logout
             
-* packages
+* packages -(FINISHED)
     * dotenv
     * axios
     * redux
