@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Account from './Account';
+import {login, fetchUserData} from '../redux/reducer';
 import {connect} from 'react-redux';
 
 class AccountContainer extends Component {
     constructor(){
         super()
-        this.state ={
+        this.state = {
             loading: false,
-            user:null,
-            message: null,
+            message: null
         }
     }
 
@@ -18,9 +18,9 @@ class AccountContainer extends Component {
         axios.get('/api/user-data').then(response => {
             console.log(response.data);
             this.setState({
-                user: response.data,
                 loading: false
             })
+            this.props.login(response.data);
         }).catch(error => {
             this.setState({
                 message: 'you are unauthorized',
@@ -58,4 +58,8 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps)(AccountContainer)
+const mapDispatchToProps = {
+    login: fetchUserData
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(AccountContainer)

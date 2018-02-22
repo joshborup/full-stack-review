@@ -1,8 +1,11 @@
 .account {
     background: linear-gradient(0deg, rgba(200, 0, 0,0.4), rgba(200, 0, 0,0));
     width: 500px;
-    margin: 300px auto;
+    height: 500px;
+    margin: 130px auto;
     padding: 50px;
+    border-radius: 50%;
+    box-shadow: 10px 10px 20px rgba(0,0,0,0.3);
     
 }
 

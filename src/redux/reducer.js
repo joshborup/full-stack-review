@@ -2,15 +2,15 @@
 
 const initialState = {
     user: {
-        name: 'Joshua'
+        name: null
     }
 }
 
-const LOG_IN = 'LOG_IN'
+const FETCH_USER_DATA = 'FETCH_USER_DATA'
 
 export default function(state = initialState, action){
     switch(action.type){
-        case LOG_IN:
+        case FETCH_USER_DATA:
 
         return {...state, user: action.payload};
 
@@ -18,3 +18,10 @@ export default function(state = initialState, action){
         return state;
     }
 };
+
+export function fetchUserData(user){
+    return {
+        type: FETCH_USER_DATA,
+        payload: user
+    }
+}
