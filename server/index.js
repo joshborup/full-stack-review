@@ -5,7 +5,7 @@ const session = require('express-session');
 const massive = require('massive');
 const authController = require('./controller/authController');
 const userController = require('./controller/userController');
-const checkUserStatus = require('./middlewares/checkUserStatus')
+const checkUserStatus = require('./middlewares/checkUserStatus');
 
 require('dotenv').config();
 
@@ -29,14 +29,14 @@ massive(process.env.CONNECTION_STRING).then(db => {
 })
 
 app.get('/auth/callback', authController.connect);
-// app.get('/api/user-data', checkUserStatus, userController.getUser)
-app.get('/api/user-data', (req, res)=> {
-    res.json({
-        name: 'josh',
-        email: 'joshborup@gmail.com',
-        id: 56
-    })
-});
+app.get('/api/user-data', checkUserStatus, userController.getUser)
+// app.get('/api/user-data', (req, res)=> {
+//     res.json({
+//         name: 'josh',
+//         email: 'joshborup@gmail.com',
+//         id: 56
+//     })
+// });
 app.post('/api/logout', userController.logout)
 
 const PORT = process.env.SERVER_PORT || 4000;

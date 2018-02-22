@@ -40,7 +40,8 @@ class AccountContainer extends Component {
                 {user && <Account 
                     name={user.name}
                     email={user.email}
-                    id={user.id}
+                    id={user.sub}
+                    picture={user.picture}
                     amount={100 + Math.floor(Math.random() * 100)}
                 />
                 }
