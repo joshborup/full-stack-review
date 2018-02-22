@@ -1,8 +1,77 @@
+:root{
+    --first-gradient: linear-gradient(90deg,yellow, purple, red);
+    --second-gradient: linear-gradient(135deg,red, yellow, purple);
+    --third-gradient: linear-gradient(180deg,purple, red, yellow);
+    --fourth-gradient: linear-gradient(235deg,yellow, purple, red);
+    --fifth-gradient: linear-gradient(360deg,red, yellow, purple);
+    --sixth-gradient: linear-gradient(90deg,purple, red, yellow);
+}
+
+
 .login{
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
+}
+
+.login h1 {
+    font-size: 72px;
+    color: transparent;
+    background: var(--third-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: colorchange infinite 1s forwards linear;
+  
+}
+
+@keyframes colorchange {
+    0% {
+        color: transparent;
+    background: var(--first-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+    }
+    20% {
+        color: transparent;
+    background: var(--second-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  
+    }
+    40% {
+        color: transparent;
+    background: var(--third-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+    }
+    60% {
+        color: transparent;
+    background: var(--fourth-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+    }
+    80% {
+        color: transparent;
+    background: var(--fifth-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+    }
+    100% {
+        color: transparent;
+    background: var(--sixth-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+    }
+    
 }
 
 .login img {
@@ -10,13 +79,21 @@
 }
 
 .login a {
+    font-family: cursive;
+    font-size: 20px;
     margin: 30px 0px;
     display: inline-block;
     height: 40px;
-    width: 80px;
-    padding: 10px;
+    width: 180px;
+    padding:5px;
     background: grey;
     color: white;
     border: none;
     text-decoration: none;
+    border-radius: 3px;
+    box-shadow: 3px 3px 10px black;
+}
+
+.login a:active {
+    box-shadow: none;
 }

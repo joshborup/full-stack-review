@@ -8,7 +8,7 @@ const Login = () => {
         <div className='login'>
             <h1>Login</h1>
             <img src={logo}/>
-            <a href={link}>Login</a>
+            <a href={link}>Login / Register</a>
         </div>
     );
 };
