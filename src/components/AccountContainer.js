@@ -38,9 +38,9 @@ class AccountContainer extends Component {
             <div>
                 {loading && <div>Loading...</div>}
                 {user && <Account 
-                    name={user.name}
+                    name={user.user}
                     email={user.email}
-                    id={user.sub}
+                    id={user.id}
                     picture={user.picture}
                     amount={100 + Math.floor(Math.random() * 100)}
                 />

@@ -11,9 +11,31 @@ module.exports = {
         }).then(accessTokenResponse => {
             return axios.get(`https://${process.env.REACT_APP_AUTH0_DOMAIN}/userinfo/?access_token=${accessTokenResponse.data.access_token}`).then(userInfoResponse => {
 
-            req.session.user = userInfoResponse.data;
-            console.log(req.session.user);
-            res.redirect('/account');
+            userInfo = userInfoResponse.data;
+            req.app.get('db').get_user_by_authid(userInfo.sub).then(users => {
+                    if(users.length){
+                    const user = {
+                        user: userInfo.name,
+                        id: userInfo.sub,
+                        picture: userInfo.picture,
+                        email: userInfo.email
+                    }
+                    req.session.user = user;
+                    res.redirect('/account');
+                }else{
+                    return req.app.get('db').create_user([userInfo.sub, userInfo.profile_name, userInfo.picture, userInfo.email]).then(newUser => {
+                        const user = {
+                            name: newUser[0].profile_name,
+                            id: newUser[0].sub,
+                            picture: newUser[0].picture,
+                            email: newUser[0].email
+                        }
+                        req.session.user = user;
+                        res.redirect('/account');
+                    })
+                }
+            })
+            
 
             }).catch(error => console.log('access token', error));
         }
